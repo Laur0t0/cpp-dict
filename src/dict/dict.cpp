@@ -1,23 +1,29 @@
 #include "dict.h"
 
+#include "node/node.h"
 #include "test.h"
+#include <algorithm>
 
 using namespace std;
 
 namespace dict {
 
 void Dictionary::insert(const string& de, const string& en) {
-  // TODO
+  root.insert(de, en);
 }
 
 string Dictionary::lookup(const string& de) {
-  // TODO
+  bintree::Node<string, string>* temp = root.find(de);
+  if (temp != nullptr) {
+    return temp -> value;
+  }
   return "";
+  
+  //return r? r -> value : ""; //Fragezeichen-Doppelpunkt-Operator
 }
 
 bool Dictionary::contains_de(const string& de) {
-  // TODO
-  return false;
+  return root.find(de) != nullptr;
 }
 
 TEST_CASE("empty") {
