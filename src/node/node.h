@@ -40,7 +40,7 @@ struct Node {
   }
 
   /// Fügt einen neuen Knoten in den Baum ein.
-  void insert(K key_, V value_) {
+  void insert (K key_, V value_) {
 
     //überprüft, ob die Parent Node leer ist, wenn ja wird set aufgrufen
     if (this -> is_empty()) {
